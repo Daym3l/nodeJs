@@ -1,0 +1,22 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "Complete Node.js Guide",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon app.js",
+    "start-sever":"node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daym3l/nodeJs.git"
+  },
+  "author": "Daymel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Daym3l/nodeJs/issues"
+  },
+  "homepage": "https://github.com/Daym3l/nodeJs#readme"
+}
+ 
