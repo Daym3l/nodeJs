@@ -1,16 +1,26 @@
 {
-  "name": "nodejs",
+  "name": "nodejs_course",
   "version": "1.0.0",
   "description": "Complete Node.js Guide",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"nodemon app.js",
-    "start-sever":"node app.js"
+    "start": "nodemon app.js",
+    "start-sever": "node app.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Daym3l/nodeJs.git"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
   },
   "author": "Daymel",
   "license": "MIT",
@@ -19,4 +29,3 @@
   },
   "homepage": "https://github.com/Daym3l/nodeJs#readme"
 }
- 
