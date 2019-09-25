@@ -10,9 +10,11 @@ const shopRoutes = require("./routes/shop");
 
 app.use(body_parser.urlencoded({ extended: true }));
 
-app.use(adminRoutes);
+app.use('/admin',adminRoutes);
 app.use(shopRoutes);
 
-
+app.use((req,res,next)=>{
+    res.status(404).send('<h1>PAGE NOT FOUND</h1>')
+})
 
 app.listen(3001);
