@@ -1,34 +1,30 @@
 const path = require("path");
+
 const express = require("express");
+
 const body_parser = require("body-parser");
 
 const app = express();
 
-const expresHbs = require("express-handlebars");
-
-// hace fata definir un main-laypout por default
-// app.engine("hbs", expresHbs());
-// app.set("view engine", "hbs");
-// app.set("views", "views/hbs");
-
-// PUG ENGINE
-// app.set("view engine", "pug");
-// app.set("views", "views/pug");
-
 app.set("view engine", "ejs");
-app.set("views", "views/ejs");
+app.set("views", "views");
 
-const adminData = require("./routes/admin");
+//Routes
+const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
+//Controllers
+const errorControllers = require("./controllers/cotroller.error");
+
 app.use(body_parser.urlencoded({ extended: true }));
+
+//para incluir la carpeta public
 app.use(express.static(path.resolve(__dirname, "public")));
 
-app.use("/admin", adminData.routes);
+app.use("/admin", adminRoutes);
+
 app.use(shopRoutes);
 
-app.use((req, res, next) => {
-  res.status(404).render("404", { docTitle: "Not Page Found!!!" });
-});
+app.use(errorControllers.get404);
 
 app.listen(3001);
