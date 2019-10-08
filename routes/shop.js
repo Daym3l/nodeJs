@@ -10,10 +10,14 @@ router.get("/", controllerShop.getIndex);
 
 router.get("/products", controllerShop.getProducts);
 
+router.get("/products/:productId", controllerShop.getProduct);
+
 router.get("/cart", controllerShop.getCart);
+
+router.post("/cart", controllerShop.postCart);
 
 router.get("/checkout", controllerShop.getCheckout);
 
-router.get('/orders', controllerShop.getOrders);
+router.get("/orders", controllerShop.getOrders);
 
 module.exports = router;
