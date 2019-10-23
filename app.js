@@ -4,6 +4,7 @@ const express = require("express");
 
 const body_parser = require("body-parser");
 
+
 const app = express();
 
 app.set("view engine", "ejs");
@@ -12,6 +13,8 @@ app.set("views", "views");
 //Routes
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
+
+
 
 //Controllers
 const errorControllers = require("./controllers/cotroller.error");
