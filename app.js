@@ -4,7 +4,6 @@ const express = require("express");
 
 const body_parser = require("body-parser");
 
-
 const app = express();
 
 app.set("view engine", "ejs");
@@ -14,10 +13,9 @@ app.set("views", "views");
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
-
-
 //Controllers
 const errorControllers = require("./controllers/cotroller.error");
+const sequelize = require("./helpers/helpers.database");
 
 app.use(body_parser.urlencoded({ extended: true }));
 
@@ -30,4 +28,11 @@ app.use(shopRoutes);
 
 app.use(errorControllers.get404);
 
-app.listen(3001);
+sequelize
+  .sync()
+  .then(() => {
+    app.listen(3001);
+  })
+  .catch(err => { 
+    console.error("DATABASE_ERROR:" + err);
+  });
