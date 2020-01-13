@@ -2,7 +2,7 @@ const path = require("path");
 const express = require("express");
 const mongoose = require("mongoose");
 const body_parser = require("body-parser");
-
+const session = require("express-session");
 const app = express();
 
 app.set("view engine", "ejs");
@@ -21,6 +21,8 @@ app.use(body_parser.urlencoded({ extended: true }));
 
 //para incluir la carpeta public
 app.use(express.static(path.resolve(__dirname, "public")));
+//session
+app.use(session({ secret: "xxx", resave: false, saveUninitialez: false }));
 
 //middlewares for routes
 app.use((req, res, next) => {
