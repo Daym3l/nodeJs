@@ -25,7 +25,8 @@
     "sequelize": "^5.21.1"
   },
   "devDependencies": {
-    "nodemon": "^1.17.5"
+    "nodemon": "^1.17.5",
+    "dot-prop": ">=4.2.1"
   },
   "author": "Daymel",
   "license": "MIT",
